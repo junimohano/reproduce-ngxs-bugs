@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'test/:id/edit',
     loadChildren: './test/test.module#TestModule'
+  },
+  {
+    path: 'test/:id/detail',
+    loadChildren: './test/test.module#TestModule'
   }
 ];
 
