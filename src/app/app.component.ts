@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'reproduce-ngxs-bugs';
+
+  constructor(private router: Router) {
+  }
+
+  navigateToAdd(): void {
+    this.router.navigate(['/test/new']);
+  }
+
+  navigateToEdit(): void {
+    this.router.navigate(['/test/1/edit']);
+  }
 }

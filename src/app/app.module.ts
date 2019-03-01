@@ -1,8 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgxsModule } from '@ngxs/store';
+import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+const ngxsModules = [
+  NgxsModule.forRoot([], { developmentMode: !environment.production })
+];
 
 @NgModule({
   declarations: [
@@ -10,7 +16,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ...ngxsModules
   ],
   providers: [],
   bootstrap: [AppComponent]
