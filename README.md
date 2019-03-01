@@ -3,7 +3,9 @@
 1. Navigate to Add page
 2. Click Open Alert button then it will show alert message
 3. Navigate to Edit page
-4. Click Open Alert button then it will show alert message multiple times (should be called one time).
+4. Click Open Alert button then it will show alert message two times (should be called one time).
+5. Navigate to Detail page
+6. Click Open Alert button then it will show alert message three times (should be called one time).
 
 It is happened if a module has a feature state which is called by different routes on lazy load.
 
