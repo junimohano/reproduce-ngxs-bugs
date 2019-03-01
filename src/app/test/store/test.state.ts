@@ -1,14 +1,13 @@
-import { Action, Selector, State, StateContext } from '@ngxs/store';
-import { Observable, of } from 'rxjs';
+import { Action, State, StateContext } from '@ngxs/store';
 
-import { Save, SetTestId, Update } from './test.actions';
+import { OpenAlert } from './test.actions';
 
 export interface TestStateModel {
-  testId: string;
+  message: string;
 }
 
 export const defaultsTestState: TestStateModel = {
-  testId: null
+  message: 'Alert'
 };
 
 @State<TestStateModel>({
@@ -18,28 +17,9 @@ export const defaultsTestState: TestStateModel = {
 export class TestState {
   constructor() { }
 
-  @Selector()
-  static isEdit(state: TestStateModel): boolean {
-    return !!state.testId;
-  }
-
-  @Action(SetTestId)
-  setTestId({ patchState }: StateContext<TestStateModel>, { id }: SetTestId): void {
-    patchState({
-      testId: id
-    });
-  }
-
-
-  @Action(Save)
-  save(ctx: StateContext<TestStateModel>, { }: Save): Observable<any> {
-    alert('Save');
-    return of(null);
-  }
-
-  @Action(Update)
-  update(ctx: StateContext<TestStateModel>, { }: Update): Observable<any> {
-    alert('Update');
-    return of(null);
+  @Action(OpenAlert)
+  openAlert({ getState }: StateContext<TestStateModel>, { }: OpenAlert): void {
+    const state = getState();
+    alert(state.message);
   }
 }

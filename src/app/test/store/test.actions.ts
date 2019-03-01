@@ -1,14 +1,4 @@
-export class Save {
-  static readonly type = '[Test] Save';
+export class OpenAlert {
+  static readonly type = '[Test] OpenAlert';
   constructor() { }
-}
-
-export class Update {
-  static readonly type = '[Test] Update';
-  constructor() { }
-}
-
-export class SetTestId {
-  static readonly type = '[Test] SetTestId';
-  constructor(public id: string) { }
 }

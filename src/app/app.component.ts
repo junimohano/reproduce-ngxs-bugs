@@ -1,22 +1,12 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  title = 'reproduce-ngxs-bugs';
-
-  constructor(private router: Router) {
-  }
-
-  navigateToAdd(): void {
-    this.router.navigate(['/test/new']);
-  }
-
-  navigateToEdit(): void {
-    this.router.navigate(['/test/1/edit']);
+  constructor() {
   }
 }

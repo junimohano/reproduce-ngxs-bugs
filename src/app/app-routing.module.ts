@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: 'test/:id/edit',
     loadChildren: './test/test.module#TestModule'
-  },
+  }
 ];
 
 @NgModule({
